@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Add a person</a>
+<div th:each="aPerson:${people}">
+    <span th:text="${aPerson.firstName}"></span>
+    <span th:text="${aPerson.lastName}"></span>
+    <span th:text="${aPerson.address}"></span>
+    <span th:text="${aPerson.phoneNumber}"></span>
+    <span><a th:href="@{/update/{id}(id=${aPerson.id})}">Update</a></span>
+
+</div>
+</body>
+</html>
