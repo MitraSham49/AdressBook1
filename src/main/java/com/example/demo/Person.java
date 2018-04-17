@@ -6,26 +6,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Person {
-    @Id
+  @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @NotNull
-    @Size(min=2)
+  //  @NotNull
+   // @Size(min=2)
     private String firstName;
-    @NotNull
-    @Size(min=2)
+    //@NotNull
+  // @Size(min=2)
     private String lastName;
-    @NotNull
-    @Size(min=5)
+  //  @NotNull
+  //  @Size(min=5)
     private String address;
-    @NotNull
-    @Size(min=10)
+   // @NotNull
+  //  @Size(min=10)
     private String phoneNumber;
+   // @Email
+    private String emailAddress;
 
 
     public long getId() {
@@ -66,5 +69,14 @@ public class Person {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 }

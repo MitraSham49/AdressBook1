@@ -12,7 +12,9 @@ import javax.validation.Valid;
 
 public class MainController {
     @Autowired
+   // PersonRepository personRepo;
     PersonRepository personRepo;
+
     @RequestMapping("/")
     public String showIndex(Model model)
     {
